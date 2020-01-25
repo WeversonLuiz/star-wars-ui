@@ -1,0 +1,11 @@
+<div *ngFor="let film of films" class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{people.name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Aniversário: {{people.birth_year}}</h6>
+        <p class="card-text">{{people.gender}}</p>
+        <p class="card-text">{{people.eye_color}}</p>
+        <a href="#" class="card-link">{{people.homeworld}}</a>
+        <a href="#" class="card-link">Another link</a>
+    </div>
+    <app-films-detail></app-films-detail>
+</div>

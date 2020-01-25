@@ -1,0 +1,31 @@
+<div *ngFor="let people of peoples" class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{people.name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Aniversário: {{people.birth_year}}</h6>
+        <p class="card-text">{{people.gender}}</p>
+        <p class="card-text">{{people.eye_color}}</p>
+        <a href="#" class="card-link">{{people.homeworld}}</a>
+        <a href="#" class="card-link">Another link</a>
+    </div>
+</div>
+<!-- <div id='peoples' ng-show="peoples.length" class='panel'>			
+    <table>
+        <tr>
+        <th>Name</th>
+        <th>Birth_year</th>
+        <th>Eye color</th>
+        <th>Gender</th>
+        <th>Home world</th>
+        <th>Skin color</th>
+        </tr>
+        <tr *ngFor="let people of peoples">
+        <td>{{people.name}}</td>
+        <td>{{people.birth_year}}</td>
+        <td>{{people.eye_color}}</td>
+        <td>{{people.gender}}</td>
+        <td>{{people.homeworld}}</td>
+        <td>{{people.skin_color}}</td>
+        </tr>
+    </table>
+</div> -->
+  
