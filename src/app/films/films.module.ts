@@ -9,11 +9,11 @@ import { FilmsDetailComponent } from './films-detail/films-detail.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 const routes: Routes = [
-  { path: 'films/:id',      component: FilmsDetailComponent },
-  { path: 'films', component: FilmsListComponent },
-  { path: '**', component: PageNotFoundComponent }
+  { path: '', component: FilmsListComponent },
+  { path: ':id/edit', component: FilmsDetailComponent }
 ];
 
 @NgModule({
@@ -23,11 +23,16 @@ const routes: Routes = [
     GenericModule,
     HttpClientModule,
     NgbModule,
-    RouterModule.forRoot(routes, { enableTracing: true })
+    RouterModule.forChild(routes)
   ],
   exports: [
     FilmsListComponent,
     FilmsDetailComponent
+  ],
+  providers: [
+    {
+      provide: MatDialog, useValue:{}
+    }
   ]
 })
 export class FilmsModule { }

@@ -38,7 +38,7 @@ export class FilmsService implements IgenericOperations<Films, number>{
   }
   delete(id?: number) {
     console.log("Entrou dentro do serviço FilmeService - método DELETE/:ID");
-    this.http.delete(this.pathBase+"/"+id);
+    this.http.delete(this.pathBase + "/" + id);
   }
 
 }

@@ -10,12 +10,12 @@
             <a href="#" class="card-link">Another link</a>
           </div>
           <app-films-detail [id]=film.episode_id></app-films-detail>
+          <button mat-button (click)="openDialog(film)">Open dialog</button>
         </div>
       </div>
     </div>
 </div>
-  
-  
+
 <!-- <div class="card" *ngFor="let film of films" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{film.title}}</h5>

@@ -9,17 +9,31 @@ import { NgxBootstrapModule } from './modules/ngxbootstrap/ngxbootstrap.module';
 import { SharedModuleModule } from './shared-module/shared-module.module';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+
+// const routes: Routes = [
+//   {
+//     path: 'films',
+//     loadChildren: './films/films.module#FilmsModule',
+//   },
+//   {
+//     path: 'peoples',
+//     loadChildren: './people/people.module#PeopleModule'
+//   }
+// ];
 
 const routes: Routes = [
-  { 
+  {
     path: 'films',
-    loadChildren: './films/films.module#FilmsModule',
+    loadChildren: async () => (await import('./films/films.module')).FilmsModule,
   },
   {
-    path: 'peoples',
-    loadChildren: './people/people.module#PeopleModule'
+    path: 'species',
+    loadChildren: async () => (await import('./species/species.module')).SpeciesModule
   }
-];
+
+]
 
 @NgModule({
   declarations: [
@@ -33,7 +47,8 @@ const routes: Routes = [
     FilmsModule,
     PeopleModule,
     SharedModuleModule,
-    RouterModule.forRoot(routes, { enableTracing: true })
+    RouterModule.forRoot(routes, { enableTracing: true, useHash: true }),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
