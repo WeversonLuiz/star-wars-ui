@@ -9,6 +9,7 @@ import { FilmsModule } from '../films/films.module';
 import { Routes } from '@angular/router';
 import { DialogDetailsComponent } from './dialog-details/dialog-details.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material';
 
 
 
@@ -19,7 +20,8 @@ import { MatDialogModule } from '@angular/material/dialog';
   ],
   imports: [
     CommonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
   ],
   exports: [
     NavComponent,

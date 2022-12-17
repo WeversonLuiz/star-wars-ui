@@ -9,18 +9,24 @@ import { Species } from '../species';
 })
 export class SpeciesListComponent implements OnInit {
 
-  private species: Species[]; // Lista de species
+  displayedColumns = ['name', 'classification', 'designation', 'language', 'homeworld'];
+  dataSource = [];
+  species: Species[]; // Lista de species
 
   constructor(private service: SpeciesService,) { }
   ngOnInit() {
     this.getAll();
+    console.log("this.species", this.species);
   }
 
   //metodo que vai assinar a consulta(subscribe)
   //quando houver resultados os dados serão armazenados em um array
-  getAll(){
-    this.service.get().subscribe(
-      species => this.species = species.results,
+  getAll() {
+    this.service.get().subscribe(species => {
+      this.species = species.results;
+      this.dataSource = this.species;
+      console.log("this.species", this.species);
+    },
       err => {
         //console.log(err);
       });

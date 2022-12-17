@@ -11,6 +11,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material';
 
 // const routes: Routes = [
 //   {
@@ -49,6 +50,7 @@ const routes: Routes = [
     SharedModuleModule,
     RouterModule.forRoot(routes, { enableTracing: true, useHash: true }),
     BrowserAnimationsModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
